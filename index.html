@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="title">Task Manager</h1>
+
+      <form class="add-form" id="addForm">
+        <input type="text" id="titleInput" placeholder="Yangi vazifa..." />
+        <select id="priorityInput">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+
+        <div class="hours-input">
+          <input type="number" id="hoursInput" value="0" min="1" />
+          <p>hour</p>
+        </div>
+        <button type="submit">Qo'shish</button>
+      </form>
+
+      <div class="filters" id="filters">
+        <button class="filter active" data-status="all">Hammasi</button>
+        <button class="filter" data-status="pending">Qolgan</button>
+        <button class="filter" data-status="done">Bajarilgan</button>
+      </div>
+
+      <ul class="task-list" id="tasklist"></ul>
+
+      <section class="stats" id="stats">
+        <div class="stat">
+          <span class="num" id="total">0</span><span>Jami</span>
+        </div>
+        <div class="stat">
+          <span class="num" id="doneCount">0 </span><span>Bajarilgan</span>
+        </div>
+        <div class="stat">
+          <span class="num" id="pendingHours">0 h</span><span>Qolgan vaqt</span>
+        </div>
+        <div class="stat">
+          <span class="num" id="percent">0%</span><span>Bajarish</span>
+        </div>
+      </section>
+
+      <div class="progress">
+        <div class="bar" id="bar" style="width: 0%"></div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
